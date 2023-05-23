@@ -1,0 +1,18 @@
+import os
+# 获取桌面路径
+desktop_path = os.path.join(os.path.expanduser("~"),"desktop")
+import datetime
+# 获取当前时间
+now_time= datetime.datetime.now()
+# 格式化当前年月日
+now_date = now_time.strftime("%Y-%m-%d")
+# 创建桌面文件夹路径
+desktop_file = os.path.join(desktop_path,"file_name_"+now_data)
+# 创建桌面文件夹内部文件夹路径
+inner_file = os.path.join(desktop_file,"inner_file")
+# 判断文件是否存在，存在删除，不存在则创建
+if os.path.exists(desktop_file):
+  shutil.rmtree(desktop_file)
+if not os.path.exists(inner_file):
+  os.mkdir(desktop_file)
+  os.mkdir(inner_file)
